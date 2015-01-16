@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="angularRestfulAuth">
+<head>
+  <title>.:MeanBlog:.</title>
+  <link rel="stylesheet" href="./css/vendor/bootstrap.css">
+  <link rel="stylesheet" href="./css/custom/modal.css">
+  <link rel="stylesheet" href="./css/custom/style.css">
+</head>
+<body >
+  <div id="container">
+    <header>
+      <div class="top-most">
+        <ul>
+          <li><a href="#">Mean Blog</a></li>
+          <li><a ng-href="#/signup">Signup</a></li>
+          <li><a ng-href="#/login">Login</a></li>
+        </ul>
+        <!-- <form id="search">
+          <input type="text" placeholder="Type here..." required class="search">
+          <span class="arrow">
+            <input type="button" class="button" value="Search">
+          </span>
+        </form> -->
+      </div>
+      <div class="mac">
+        <p>A Blog Site for technology news and <br> a gallery of innovative, creative ideas...</p>
+      </div>
+    </header> 
+  </div>  
+
+  <div ng-view >
+    
+  </div>
+
+
+  <script src="./js/vendor/jquery.js"></script>
+  <script src="./js/vendor/angular.js"></script>
+  <script src="./js/vendor/angular-route.js"></script>
+  <script src="./js/vendor/ngStorage.js"></script>
+  <script src="./js/custom/app.js"></script>
+  <script src="./js/custom/controller.js"></script>
+  <script src="./js/custom/services.js"></script> 
+</body>
+</html>                                   

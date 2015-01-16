@@ -1,0 +1,122 @@
+@font-face {
+  font-family: "NeoSans";
+  src:url("../../font/NeoSans.ttf");
+}
+
+@font-face {
+  font-family: "glasgow";
+  src:url("../../font/PFT.ttf");
+}
+
+header{
+  position:absolute;
+  height: 305px;
+  width: 100%;
+  background-color: #E74C3C;
+}
+
+.top-most{
+  position:relative;
+  height: 50px;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+}
+
+.top-most ul{
+  padding-top: 10px;
+  width: 100%;
+}
+
+ul{
+  width: 100%;
+}
+
+.top-most ul li{
+  padding-left: 20px;
+}
+
+.top-most li:first-child{
+  font-size: 1.5em;
+  padding-right: 10%;
+  
+  
+}
+.top-most li a{
+  color: #fff;
+}
+.top-most li:first-child a{
+  color: #c80f32;
+}
+
+.top-most ul li a:hover{
+  cursor: pointer;
+  color: #c80f32;
+  text-decoration: none;
+  list-style: none;
+}
+
+.top-most ul li{
+  display: inline-block;
+}
+
+/*Styling the search bar*/
+#search{
+  position: relative;
+  top: -82px;
+  left: 30%;
+  padding-left: 15%;
+  width: 500px;
+  margin: 50px auto;
+}
+.search{
+  padding: 8px 15px;
+  background: rgba(255,255,255,0.2);
+  border:0px solid #dbdbdb;
+  border-radius: 1.5px;
+  
+}
+.search:focus{
+  outline: none;
+}
+
+.button{
+  position:relative;
+  padding:6px 15px;
+  left:-8px;
+  border:2px solid #E74C3C;
+  background-color:#E74C3C;
+  color:#fafafa;
+  border-radius:0 1.5px 1.5px 0;
+}
+.button:hover  {
+  border:2px solid #fff;
+  color:#000;
+  outline: none;
+}
+
+.mac{
+  position: relative;
+  height: 250px;
+  top: px;
+  width: 100%;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),url('../../img/mac.jpg') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+}
+.mac  p{
+  position: absolute;
+  top: 90px;
+  left: 33%;
+  font-family: 'NeoSans';
+  font-size: 2em;
+  text-align: center;
+}
+
+.blog{
+  position: relative;
+  top: 400px;
+}

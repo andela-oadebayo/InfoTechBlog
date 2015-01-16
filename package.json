@@ -1,0 +1,19 @@
+{
+  "name": "MeanBlog",
+  "version": "1.0.0",
+  "description": "Information Technology Blog",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andela-oadebayo/InfoTechBlog.git"
+  },
+  "author": "DAMILOLA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andela-oadebayo/InfoTechBlog/issues"
+  },
+  "homepage": "https://github.com/andela-oadebayo/InfoTechBlog"
+}
