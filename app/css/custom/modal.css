@@ -26,6 +26,7 @@
   position: absolute;
   margin: 10% auto;
   padding: 5px 20px 13px 20px;
+  border-radius: 3px;
   background: #fff;
   background: -moz-linear-gradient(#fff, #999);
   background: -webkit-linear-gradient(#fff, #999);
@@ -59,6 +60,7 @@
   position: absolute;
   margin: 10% auto;
   padding: 5px 20px 13px 20px;
+  border-radius: 3px;
   background: #fff;
   background: -moz-linear-gradient(#fff, #999);
   background: -webkit-linear-gradient(#fff, #999);
@@ -88,18 +90,18 @@
   background: #00d9ff; 
 }
 
-form{
+.reg{
   width: 320px;
   float: left;
   margin: 50px 0px 0px 30px;
 }
 
-form > div{
+.reg > div{
   position: relative;
   overflow: hidden;
 }
 
-form input{
+ .reg_input, textarea{
   width: 80%;
   border: 2px solid #f06d06;
   background: none;
@@ -112,15 +114,15 @@ form input{
   outline: 0;
 }
 
-form input:valid{
+ .reg_input:valid, textarea:valid{
   background: white;
 }
 
-form input:focus{
+ .reg_input:focus, textarea:focus{
   border-color: #f06d06;
 }
 
-form input:focus + label{
+ .reg_input:focus + label, textarea:focus + label{
   background: #f06d06;
   color: white;
   font-size: 70%;
@@ -129,28 +131,28 @@ form input:focus + label{
   text-transform: uppercase;
 }
 
-form label{
+ label{
   transition: background 0.2s, color 0.2s, top 0.2s, bottom 0.2s, right 0.2s, left 0.2s;
   position: absolute;
   color: #999;
   padding: 23px 6px;
 }
 
-form.go_bottom input{
+ .go_bottom .reg_input, textarea{
   padding: 12px 12px 12px 12px;
 }
 
-form.go_bottom label{
+ .go_bottom label{
   top: 0;
   bottom: -4px;
   left: 0;
   width: 80%;
 }
 
-form.go_bottom input:focus{
+ .go_bottom .reg_input:focus, textarea:focus{
   padding: 14px 6px 20px 18px;
 }
-form.go_bottom input:focus + label{
+ .go_bottom .reg_input:focus + label, textarea:focus + label{
   top:100%;
   margin-top: -16px;
 }

@@ -1,8 +1,13 @@
 'use strict'
 
 angular.module('angularRestfulAuth')
-  .factory('Main', ['$http', '$localStorage', function($http, $localStorage){
-    var baseUrl = "https://blogsapi.herokuapp.com/apis";
+  .factory('Main', [
+    '$http',
+    '$rootScope',
+    '$localStorage', 
+
+    function ($http, $rootScope, $localStorage){
+    var baseUrl = "http://localhost:5000/apis";
     function changeUser(user){
       angular.extend(currentUser, user)
     }
@@ -38,18 +43,24 @@ angular.module('angularRestfulAuth')
 
     return {
       save: function(data, success, error) {
-        $http.post(baseUrl + '/signup', data).success(success).error(error)
+        $http.post(baseUrl + '/signup', data).success(success).error(error);
       },
-      signin: function(data, success, error) {
-        $http.post(baseUrl + '/login', data).success(success).error(error)
+      login: function(data, success, error) {
+        $http.post(baseUrl + '/login', data).success(success).error(error);
+      },
+      getUserArticles: function(data, success, error){
+        $http.get(baseUrl + '/article/:id', data)
       },
       me: function(success, error) {
-        $http.get(baseUrl + '/users/id').success(success).error(error)
+        $http.get(baseUrl + '/user').success(success).error(error);
       },
       logout: function(success) {
         changeUser({});
         delete $localStorage.token;
         success();
+      },
+      allPost: function(success, error){
+        $http.get(baseUrl + '/').success(success).error(error);
       }
     };
 

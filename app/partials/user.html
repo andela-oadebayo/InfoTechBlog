@@ -1,0 +1,77 @@
+<div ng-controller='UserController' class="user" ng-init="showform=true">
+  <section class="profile">
+    <div>
+      <img src="img/images.jpg" width="150" height="150">
+      <div>
+        <p>Name: {{myDetails.data.fname }}{{" "}}{{myDetails.data.lname}}</p>
+        <p>Email: {{myDetails.data.email}}</p>
+        <a ng-href="#/landing"><button class="update" type="button">Blog</button></a>
+        <button class="delete" type="button" ng-click="logout()">Logout</button>
+      </div>
+    </div>
+    <DIV class="data">
+      <table  class="table table-hover">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Tags</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>What is Angular</td>
+            <td>12-15-15</td>
+            <td>code, mongo, mean</td>
+            <td><button class="update" type="button" ng-click>Update</button></td>
+            <td><button class="delete" type="button" ng-click>Delete</button></td>
+          </tr>
+          <tr>
+            <td>What is Angular</td>
+            <td>12-15-15</td>
+            <td>code, mongo, mean</td>
+            <td><button class="update" type="button" ng-click>Update</button></td>
+            <td><button class="delete" type="button" ng-click>Delete</button></td>
+          </tr>
+          <tr>
+            <td>What is Angular</td>
+            <td>12-15-15</td>
+            <td>code, mongo, mean</td>
+            <td><button class="update" type="button" ng-click>Update</button></td>
+            <td><button class="delete" type="button" ng-click>Delete</button></td>
+          </tr>
+          <tr>
+            <td>What is Angular</td>
+            <td>12-15-15</td>
+            <td>code, mongo, mean</td>
+            <td><button class="update" type="button" ng-click>Update</button></td>
+            <td><button class="delete" type="button" ng-click>Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </DIV>
+
+    <div>
+      <p class="topic">Create a new Article</p>
+      <form class ="go_bottom reg">
+        <div>
+          <input id="title" type="text" ng-model="title" placeholde="Title" class="reg_input">
+          <label for="title">Title</label>
+        </div>
+        <div>
+          <input id="tag" type="text" ng-model="tag" placeholde="Tag" class="reg_input">
+          <label for="tag">tag</label>
+        </div>
+        <div>
+          <textarea placeholde="Please type your article"></textarea>
+        </div>
+        <section>
+          <button type="button" ng-click>Submit</button>
+        </section>
+      </form>
+    </div>
+  </section>
+</div>
+

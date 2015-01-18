@@ -6,33 +6,45 @@
   <link rel="stylesheet" href="./css/custom/modal.css">
   <link rel="stylesheet" href="./css/custom/style.css">
 </head>
-<body >
+<body>
   <div id="container">
     <header>
       <div class="top-most">
-        <ul>
-          <li><a href="#">Mean Blog</a></li>
-          <li><a ng-href="#/signup">Signup</a></li>
-          <li><a ng-href="#/login">Login</a></li>
+        <ul class="nav">
+          <li><a href="#">MeanForum</a></li>
         </ul>
-        <!-- <form id="search">
-          <input type="text" placeholder="Type here..." required class="search">
+        <form id="search">
+          <input type="text" placeholder="Type here..." class="search">
           <span class="arrow">
             <input type="button" class="button" value="Search">
           </span>
-        </form> -->
+        </form>
       </div>
       <div class="mac">
-        <p>A Blog Site for technology news and <br> a gallery of innovative, creative ideas...</p>
+        <p>A Forum Site for technology news and <br> a gallery of innovative, creative ideas...</p>
       </div>
     </header> 
+    <ul class="logo" id="logo">
+      <li><a ng-href="#/signup" id="logo1" onclick="show('logo1')">Signup</a></li>
+      <li><a ng-href="#/login"  id="logo2" onclick="show('logo2')">Login</a></li>
+    </ul>
   </div>  
-
   <div ng-view >
     
   </div>
 
+  <script type="text/javascript">
 
+  function show(elementId) { 
+  //now we kick out both conditional we do not need them anymore
+
+  //we hide both forms
+  document.getElementById("logo").style.display="none";
+  document.getElementById("logo1").style.display="none";
+  document.getElementById("logo2").style.display="none";
+  }
+
+  </script>
   <script src="./js/vendor/jquery.js"></script>
   <script src="./js/vendor/angular.js"></script>
   <script src="./js/vendor/angular-route.js"></script>

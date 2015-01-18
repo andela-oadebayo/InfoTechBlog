@@ -11,6 +11,14 @@ angular.module('angularRestfulAuth', ['ngStorage','ngRoute'])
         templateUrl: 'partials/signup.html',
         controller: 'BloggerController'
       }).
+      when('/user', {
+        templateUrl: 'partials/user.html',
+        controller: 'BloggerController'
+      }).
+      when('/landing', {
+        templateUrl: 'partials/landing.html',
+        controller: 'BloggerController'
+      }).
       otherwise({
         redirectTo: '/'
     });
@@ -26,7 +34,7 @@ angular.module('angularRestfulAuth', ['ngStorage','ngRoute'])
         },
         'responseError': function(response) {
           if(response.status === 401 || response.status === 403) {
-            $location.path('/signin');
+            $location.path('/login');
           }
           return $q.reject(response);
         }

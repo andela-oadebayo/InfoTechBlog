@@ -2,25 +2,47 @@
 
 /* Controllers */
 angular.module('angularRestfulAuth')
-  .controller('BloggerController', ['$rootScope', '$scope', '$location', '$localStorage', 'Main', function($rootScope, $scope, $location, $localStorage, Main) {
+  .controller('BloggerController', 
+    ['$rootScope', 
+    '$scope', 
+    '$location', 
+    '$localStorage',
+    'Main', 
+    function ($rootScope, $scope, $location, $localStorage, Main) {
+      $scope.username = "";
+      $scope.password = "";
+      $scope.details;
+      $scope.showform = false;
 
     $scope.login = function(){
       var formData = {
         email: $scope.email,
         password: $scope.password
-      }
-
-      Main.signin(formData, function(res){
-        if(res.type == false){
-          alert(res.data)
+      };
+      Main.login(formData, function (response){
+        if(response.type == false){
+          alert(response.data);
         }else{
-          $localStorage.token = res.data.token;
-          window.location = "/";
+          $location.path('/user');
+          $localStorage.token = response.data.token;
+          $rootScope.details = response.data;
+          console.log(response.data);
+          $scope.details = response.data;
         }
-      }, function(){
+      }, function() {
         $rootScope.error = 'Failed to signin';
+        console.log($rootScope.error);
       })
     };
+
+
+    $scope.allPost = function() {
+      Main.me(function (response){
+        $scope.articles = response;
+      }, function(){
+        $rootScope.error = "Failed to fetch articles"
+      })
+    }
 
     $scope.signup = function() {
       var formData = {
@@ -29,41 +51,49 @@ angular.module('angularRestfulAuth')
         email: $scope.email,
         nickname: $scope.nickname,
         password: $scope.password
-      }
-
-      Main.save(formData, function(res){
-        if(res.type == false){
-          alert(res.data)
+      };
+      console.log(formData);
+      Main.save(formData, function (response){
+        if(response.type == false){
+          alert(response.data);
         }else{
-          $localStorage.token = res.data.token;
-          window.location = "/";
+          $localStorage.token = response.data.token;
+         // window.location = "#/success";
         }
       }, function(){
         $rootScope.error = 'Failed to signup';
       })
     };
 
-    $scope.me = function() {
-      Main.me(function(res) {
-        $scope.myDetails = res;
+    $scope.user = function() {
+      Main.me(function (response) {
+        $scope.myDetails = response;
       }, function() {
         $rootScope.error = 'Failed to fetch details';
       })
     };
 
-    $scope.logout = function() {
-      Main.logout(function() {
-      window.location = "/"
-      }, function() {
-        alert("Failed to logout!");
-      });
-    };
     $scope.token = $localStorage.token;
   }])
-    .controller('MeCtrl', ['$rootScope', '$scope', '$location', 'Main', function($rootScope, $scope, $location, Main) {
-      Main.me(function(res) {
-        $scope.myDetails = res;
+    .controller('UserController', ['$rootScope', '$scope', '$location', 'Main', function($rootScope, $scope, $location, Main) {
+      Main.me(function(response) {
+        console.log(response);
+        $scope.myDetails = response;
       }, function() {
         $rootScope.error = 'Failed to fetch details';
-    })
+    });
+      $scope.logout = function() {
+        Main.logout(function() {
+        window.location = "#/home"
+        }, function() {
+          alert("Failed to logout!");
+        });
+      };
+
+      Main.allPost(function (response){
+        $scope.articles = response;
+        console.log(response);
+      }, function(){
+        $rootScope.error = "Failed to fetch articles"
+      });
   }]);

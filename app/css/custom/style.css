@@ -8,11 +8,19 @@
   src:url("../../font/PFT.ttf");
 }
 
+body{
+  font-family:  'NeoSans';
+    background: url('../../img/bkg1.jpg') no-repeat center center;
+}
+a{
+  text-decoration: none;
+}
+
 header{
   position:absolute;
   height: 305px;
   width: 100%;
-  background-color: #E74C3C;
+  /*background-color: #E74C3C;*/
 }
 
 .top-most{
@@ -23,47 +31,81 @@ header{
   color: #fff;
 }
 
-.top-most ul{
+.top-most .nav{
   padding-top: 10px;
   width: 100%;
 }
 
-ul{
+.nav{
   width: 100%;
 }
 
-.top-most ul li{
+.top-most .nav li{
   padding-left: 20px;
 }
 
-.top-most li:first-child{
+.top-most .nav li:first-child{
   font-size: 1.5em;
   padding-right: 10%;
   
   
 }
-.top-most li a{
+.top-most .nav li a{
   color: #fff;
 }
-.top-most li:first-child a{
+.top-most .nav li:first-child a{
   color: #c80f32;
 }
 
-.top-most ul li a:hover{
+.top-most .nav li a:hover{
   cursor: pointer;
   color: #c80f32;
   text-decoration: none;
   list-style: none;
 }
 
-.top-most ul li{
+.top-most .nav li{
   display: inline-block;
+}
+
+/*Syling the signup and login button*/
+.logo {
+  /*margin-top: 15px;*/
+  position: absolute;
+  left: 34%;
+  width: 30%;
+  margin-top: 15px;
+  top: 60%;
+}
+
+.logo li{
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  list-style: none;
+  display: inline-block;
+  padding: 10px 30px;
+  margin-left: 30px;
+  border: 1px solid #E74C3C;
+  border-radius: 3px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  font-family: 'glasgow';
+  font-size: 1.5em;
+}
+.logo li:hover{
+  background-color: #47a447;
+  border: 1px solid #fff;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 /*Styling the search bar*/
 #search{
   position: relative;
-  top: -82px;
+  top: -100px;
   left: 30%;
   padding-left: 15%;
   width: 500px;
@@ -119,4 +161,92 @@ ul{
 .blog{
   position: relative;
   top: 400px;
+}
+
+/*styling the user profile page */
+.user{
+  position: relative;
+  top: 310px;
+  padding-left: 50px ;
+  padding-right :50px; 
+  /*background-color: blue;*/
+  height: 400px;
+  font-size: 1em;
+}
+
+.profile > div > img{
+  display: inline-block;
+  font-family: 'glasgow';
+}
+
+.profile > div > div{
+  margin-top:  -140px;
+  margin-left: 170px;
+
+}
+
+table{
+  margin-top: 100px;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.data{
+   padding: 0 100px 0 100px;
+}
+
+.topic{
+  font-size: 1.5em;
+  font-family: 'glasgow';
+  margin-bottom: -50px;
+  margin-left: 40px;
+}
+
+/*Update Button*/
+
+.update{
+  margin: 10px 0;
+  width: 70px;
+  height: 30px;
+  display: block;
+  background-color: #eceeee;
+  border: 1px solid #f06d06;
+  color: #f06d06;
+  font-weight: 300;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.update:hover {
+  background-color: #47a447;
+  color: #fff;
+  border-color: #fff;
+}
+/*
+Delete Button*/
+
+.delete {
+  margin: 10px 0;
+  width: 70px;
+  height: 30px;
+  display: block;
+  background-color: #eceeee;
+  border: 1px solid #f06d06;
+  color: #f06d06;
+  font-weight: 300;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.delete:hover {
+  background-color: #d9534f;
+  color: #fff;
+  border-color: #fff;
+}
+
+textarea{
+  height: 300px;
+  width: 300px;
 }

@@ -1,13 +1,14 @@
-<div id="loginModal" class="modalDialog">
+<div>
+  <div id="loginModal" class="modalDialog">
     <div>
       <a href="#close" title="Close" class="close">X</a>
-      <form action ="#" class ="go_bottom">
+      <form class ="go_bottom reg">
         <div>
-          <input id="name" name="name" type="text" required ng-model="email">
+          <input id="email" type="text" ng-model="email" class="reg_input">
           <label for="name">Email</label>
         </div>
         <div>
-          <input id="phone" name="phone" type="password" required ng-model="password">
+          <input id="password" type="password" ng-model="password" class="reg_input">
           <label for="phone">Password</label>
         </div>
         <section>
@@ -15,4 +16,6 @@
         </section>
       </form>
     </div>
-  </div>
+  </div> 
+</div> 
+
