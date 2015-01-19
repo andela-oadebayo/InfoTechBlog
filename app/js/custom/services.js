@@ -5,9 +5,9 @@ angular.module('angularRestfulAuth')
     '$http',
     '$rootScope',
     '$localStorage', 
-
+    //"https://blogsapi.herokuapp.com/apis"
     function ($http, $rootScope, $localStorage){
-    var baseUrl = "http://localhost:5000/apis";
+    var baseUrl = "https://blogsapi.herokuapp.com/apis";
     function changeUser(user){
       angular.extend(currentUser, user)
     }
@@ -58,6 +58,9 @@ angular.module('angularRestfulAuth')
         changeUser({});
         delete $localStorage.token;
         success();
+      },  
+      deletePost: function(id, success, error) {
+         $http.delete(baseUrl + '/user/article/' + id).success(success).error(error);
       },
       allPost: function(success, error){
         $http.get(baseUrl + '/').success(success).error(error);

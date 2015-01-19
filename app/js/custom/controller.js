@@ -85,11 +85,18 @@ angular.module('angularRestfulAuth')
     $scope.token = $localStorage.token;
   }])
     .controller('UserController', ['$rootScope', '$scope', '$location', 'Main', function($rootScope, $scope, $location, Main) {
-
-
       Main.me(function(response) {
-        console.log(response);
+        // console.log(response);
         $scope.myDetails = response;
+        $scope.deletePost = function(id){
+          console.log(id);
+          Main.deletePost(id, function(response){
+            $scope.detail = response;
+            console.log(response);
+          }, function(){
+            $rootScope.error = "Failed to get details";
+          })
+        };
 
       }, function() {
         $rootScope.error = 'Failed to fetch details';
@@ -110,12 +117,12 @@ angular.module('angularRestfulAuth')
       });
 
       $scope.createArticle = function(){
-        var artcleData = {
+        var articleData = {
           title: $scope.title,
           tags: $scope.tag,
           body: $scope.body
         }
-        Main.create(artcleData, function(response){
+        Main.create(articleData, function(response){
           $scope.story = response;
           console.log(response);
           $scope.body = "";

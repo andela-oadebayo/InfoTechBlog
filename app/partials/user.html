@@ -14,18 +14,18 @@
         <thead>
           <tr>
             <th>Title</th>
-            <th>Date</th>
             <th>Tags</th>
+            <th>Body</th>
             <th>Update</th>
             <th>Delete</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>What is Angular</td>
-            <td>12-15-15</td>
-            <td>code, mongo, mean</td>
-            <td><button class="update" type="button" ng-click>Update</button></td>
+          <tr ng-repeat="post in myDetails.postDetails">
+            <td>{{post.title}}</td>
+            <td>{{post.tags}}</td>
+            <td>{{post.body}}</td>
+            <td><button class="update" type="button" ng-click="deletePost(post._id)">Update</button></td>
             <td><button class="delete" type="button" ng-click>Delete</button></td>
           </tr>
         </tbody>
