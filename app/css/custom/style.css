@@ -10,7 +10,8 @@
 
 body{
   font-family:  'NeoSans';
-    background: url('../../img/bkg1.jpg') no-repeat center center;
+  background: url('../../img/bkg1.jpg') repeat center center;
+  background-size: cover;
 }
 a{
   text-decoration: none;
@@ -41,16 +42,16 @@ header{
 }
 
 .top-most .nav li{
+
   padding-left: 20px;
 }
 
 .top-most .nav li:first-child{
   font-size: 1.5em;
-  padding-right: 10%;
-  
-  
+  padding-right: 10%;  
 }
 .top-most .nav li a{
+  margin-top: -10px;
   color: #fff;
 }
 .top-most .nav li:first-child a{
@@ -105,7 +106,7 @@ header{
 /*Styling the search bar*/
 #search{
   position: relative;
-  top: -100px;
+  top: -94px;
   left: 30%;
   padding-left: 15%;
   width: 500px;
@@ -198,7 +199,7 @@ table{
 .topic{
   font-size: 1.5em;
   font-family: 'glasgow';
-  margin-bottom: -50px;
+  margin-bottom: -30px;
   margin-left: 40px;
 }
 
@@ -222,6 +223,11 @@ table{
   background-color: #47a447;
   color: #fff;
   border-color: #fff;
+}
+
+hr{
+  height: 2px;
+  background-color: #000;
 }
 /*
 Delete Button*/
@@ -249,4 +255,23 @@ Delete Button*/
 textarea{
   height: 300px;
   width: 300px;
+}
+
+.story{
+  font-family: 'glasgow';
+  color:#d9534f;
+  font-size: 1.5em;
+  margin-top: -55px;
+  margin-left: 100px;
+}
+
+.foot{
+  position: fixed;
+  top: 100%;
+  color: #d9534f;
+  left: 40%;
+  font-family: 'glasgow';
+
+  text-align: center;
+  margin-left: -50px;
 }

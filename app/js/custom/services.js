@@ -61,6 +61,9 @@ angular.module('angularRestfulAuth')
       },
       allPost: function(success, error){
         $http.get(baseUrl + '/').success(success).error(error);
+      }, 
+      create: function(data, success, error){
+        $http.post(baseUrl + '/article/post', data).success(success).error(error);
       }
     };
 
