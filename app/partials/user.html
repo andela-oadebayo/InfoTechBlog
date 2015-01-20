@@ -26,7 +26,7 @@
             <td>{{post.tags}}</td>
             <td>{{post.body}}</td>
             <td><button class="update" type="button" ng-click="deletePost(post._id)">Update</button></td>
-            <td><button class="delete" type="button" ng-click>Delete</button></td>
+            <td><button class="delete" type="button" ng-click="deletePost(post._id)">Delete</button></td>
           </tr>
         </tbody>
       </table>

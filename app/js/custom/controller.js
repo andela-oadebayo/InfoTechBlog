@@ -12,9 +12,6 @@ angular.module('angularRestfulAuth')
       $scope.details;
       $scope.showform = true;
       $scope.story = "";
-      // document.getElementById("logo").style.display="block";
-      // document.getElementById("logo1").style.display="block";
-      // document.getElementById("logo2").style.display="block";
     $scope.login = function(){
       var formData = {
         email: $scope.email,
@@ -38,12 +35,6 @@ angular.module('angularRestfulAuth')
         console.log($rootScope.error);
       })
     };
-
-    // $scope.hideForm = function(){
-    //   document.getElementById("logo").style.display="none";
-    //   document.getElementById("logo1").style.display="none";
-    //   document.getElementById("logo2").style.display="none";
-    // }
 
     $scope.allPost = function() {
       Main.me(function (response){
@@ -75,35 +66,33 @@ angular.module('angularRestfulAuth')
     };
 
     $scope.user = function() {
-      Main.me(function (response) {
-        $scope.myDetails = response;
-      }, function() {
-        $rootScope.error = 'Failed to fetch details';
-      })
+
     };
 
     $scope.token = $localStorage.token;
   }])
     .controller('UserController', ['$rootScope', '$scope', '$location', 'Main', function($rootScope, $scope, $location, Main) {
-      Main.me(function(response) {
-        // console.log(response);
-        $scope.myDetails = response;
-        $scope.deletePost = function(id){
-          console.log(id);
-          Main.deletePost(id, function(response){
-            $scope.detail = response;
-            console.log(response);
-          }, function(){
-            $rootScope.error = "Failed to get details";
-          })
-        };
-
-      }, function() {
-        $rootScope.error = 'Failed to fetch details';
-    });
+      $scope.getAllData = function(){
+        Main.me(function (response) {
+          $scope.myDetails = response;
+          $scope.deletePost = function(id){
+            console.log(id);
+            Main.deletePost(id, function(response){
+              $scope.detail = response;
+              $scope.getAllData();
+              console.log(response);
+            }, function(){
+              $rootScope.error = "Failed to get details";
+            })
+          };
+        }, function() {
+          $rootScope.error = 'Failed to fetch details';
+        })
+      };
+      
       $scope.logout = function() {
         Main.logout(function() {
-        window.location = "#/home"
+        window.location = "#/login"
         }, function() {
           alert("Failed to logout!");
         });
@@ -133,3 +122,16 @@ angular.module('angularRestfulAuth')
         }) 
       }
   }]);
+
+
+
+
+$scope.deletePost = function(id){
+          console.log(id);
+          Main.deletePost(id, function(response){
+            $scope.detail = response;
+            console.log(response);
+          }, function(){
+            $rootScope.error = "Failed to get details";
+          })
+        };
