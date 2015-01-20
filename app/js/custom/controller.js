@@ -65,10 +65,6 @@ angular.module('angularRestfulAuth')
       })
     };
 
-    $scope.user = function() {
-
-    };
-
     $scope.token = $localStorage.token;
   }])
     .controller('UserController', ['$rootScope', '$scope', '$location', 'Main', function($rootScope, $scope, $location, Main) {
@@ -89,7 +85,7 @@ angular.module('angularRestfulAuth')
           $rootScope.error = 'Failed to fetch details';
         })
       };
-      
+
       $scope.logout = function() {
         Main.logout(function() {
         window.location = "#/login"
@@ -122,16 +118,3 @@ angular.module('angularRestfulAuth')
         }) 
       }
   }]);
-
-
-
-
-$scope.deletePost = function(id){
-          console.log(id);
-          Main.deletePost(id, function(response){
-            $scope.detail = response;
-            console.log(response);
-          }, function(){
-            $rootScope.error = "Failed to get details";
-          })
-        };
