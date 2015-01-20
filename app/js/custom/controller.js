@@ -68,23 +68,21 @@ angular.module('angularRestfulAuth')
     $scope.token = $localStorage.token;
   }])
     .controller('UserController', ['$rootScope', '$scope', '$location', 'Main', function($rootScope, $scope, $location, Main) {
-      $scope.getAllData = function(){
-        Main.me(function (response) {
-          $scope.myDetails = response;
-          $scope.deletePost = function(id){
-            console.log(id);
-            Main.deletePost(id, function(response){
-              $scope.detail = response;
-              console.log(response);
-            }, function(){
-              $rootScope.error = "Failed to get details";
-            })
-          };
-          $scope.getAllData();
-        }, function() {
-          $rootScope.error = 'Failed to fetch details';
-        })
-      };
+      Main.me(function (response) {
+        $scope.myDetails = response;
+        $scope.deletePost = function(id){
+          console.log(id);
+          Main.deletePost(id, function(response){
+            $scope.detail = response;
+            console.log(response);
+          }, function(){
+            $rootScope.error = "Failed to get details";
+          })
+        };
+      }, function() {
+        $rootScope.error = 'Failed to fetch details';
+      });
+     
 
       $scope.logout = function() {
         Main.logout(function() {
