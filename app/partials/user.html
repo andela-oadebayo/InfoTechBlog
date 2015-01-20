@@ -1,0 +1,58 @@
+<div ng-controller='UserController' class="user" ng-init="getAllData()">
+  <section class="profile">
+    <div>
+      <img src="img/images.jpg" width="150" height="150">
+      <div>
+        <p>Name: {{myDetails.userDetails.fname }}{{" "}}{{myDetails.userDetails.lname}}</p>
+        <p>Email: {{myDetails.userDetails.email}}</p>
+        <a ng-href="#/landing"><button class="update" type="button">Blog</button></a>
+        <button class="delete" type="button" ng-click="logout()">Logout</button>
+      </div>
+    </div>
+    <DIV class="data">
+      <table  class="table table-hover">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Tags</th>
+            <th>Body</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="post in myDetails.postDetails">
+            <td>{{post.title}}</td>
+            <td>{{post.tags}}</td>
+            <td>{{post.body}}</td>
+            <td><button class="update" type="button" ng-click>Update</button></td>
+            <td><button class="delete" type="button" ng-click="deletePost(post._id)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </DIV>
+
+
+    <div>
+      <p class="topic">Create a new Article</p>
+      <form class ="go_bottom reg">
+        <div>
+          <input id="title" type="text" ng-model="title" placeholde="Title" class="reg_input">
+          <label for="title">Title</label>
+        </div>
+        <div>
+          <input id="tag" type="text" ng-model="tag" placeholde="Tag" class="reg_input">
+          <label for="tag">tag</label>
+        </div>
+        <div>
+          <textarea placeholde="Please type your article" ng-model="body"></textarea>
+        </div>
+        <section>
+          <button type="button" ng-click="createArticle()">Submit</button>
+          <p class="story" ng-bind="story"></p>
+        </section>
+      </form>
+    </div>
+  </section>
+</div>
+

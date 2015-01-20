@@ -1,0 +1,31 @@
+  <div id="signupModal" class="modalDialog_signup">
+    <div>
+      <a href="#close" title="Close" class="close">X</a>
+      <h5>Please Register with your details</h5>
+      <form class ="go_bottom reg">
+        <div>
+          <input  name="fname" type="text" ng-model="fname" class="reg_input">
+          <label for="fname">FirstName</label>
+        </div>
+        <div>
+          <input  name="lname" type="text" ng-model="lname" class="reg_input">
+          <label for="lname">LastName</label>
+        </div>
+        <div>
+          <input  name="email" type="text" ng-model="email" class="reg_input">
+          <label for="email">Email</label>
+        </div>
+        <div>
+          <input name="password" type="password" ng-model="password" class="reg_input">
+          <label for="password">Password</label>
+        </div>
+        <div>
+          <input name="nickname" type="text" ng-model="nickname" class="reg_input">
+          <label for="nickname">Nickname</label>
+        </div>
+        <section>
+          <button type="button" ng-click="signup()">Register</button>
+        </section>
+      </form>
+    </div>
+  </div>
