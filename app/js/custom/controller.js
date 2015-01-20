@@ -75,12 +75,13 @@ angular.module('angularRestfulAuth')
             console.log(id);
             Main.deletePost(id, function(response){
               $scope.detail = response;
-              $scope.getAllData();
+              
               console.log(response);
             }, function(){
               $rootScope.error = "Failed to get details";
             })
           };
+          $scope.getAllData();
         }, function() {
           $rootScope.error = 'Failed to fetch details';
         })
